@@ -1,16 +1,13 @@
-import { BgComponent } from "@/components/BgComponent";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
-import { MainSection } from "@/components/MainSection";
 import { SideNavBar } from "@/components/SideNavBar";
+import React from "react";
 
-export default function Home() {
+export default function Start() {
   return (
-    <main className="py-8 px-28">
+    <main className="py-8 px-28 bg-home h-screen">
       <SideNavBar />
       <Header />
-      <BgComponent />
-      <MainSection />
       <Footer />
     </main>
   );

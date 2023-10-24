@@ -3,8 +3,15 @@
 import { HiOutlineArrowRight } from "react-icons/hi";
 import { motion } from "framer-motion";
 import { fadeIn } from "@/utils/variants";
+import { useRouter } from "next/navigation";
 
 export function MainSection() {
+  const router = useRouter();
+
+  const handleChangeBg = () => {
+    router.push("/start");
+  };
+
   return (
     <motion.div
       variants={fadeIn("left", 0.3)}
@@ -28,7 +35,10 @@ export function MainSection() {
         <div className="text-center text-neutral-100 text-2xl font-normal font-['Open Sans'] uppercase mb-6">
           start experience
         </div>
-        <div className="w-14 h-14 p-4 bg-white bg-opacity-10 rounded-full shadow-inner backdrop-blur-lg justify-center items-center inline-flex cursor-pointer hover:brightness-125 hover:scale-125 transition-all duration-300">
+        <div
+          onClick={handleChangeBg}
+          className="w-14 h-14 p-4 bg-white bg-opacity-10 rounded-full shadow-inner backdrop-blur-lg justify-center items-center inline-flex cursor-pointer hover:brightness-125 hover:scale-125 transition-all duration-300"
+        >
           <HiOutlineArrowRight className="text-white text-2xl" />
         </div>
       </div>

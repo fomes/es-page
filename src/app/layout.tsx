@@ -1,7 +1,8 @@
-import type { Metadata } from "next";
-import { Open_Sans } from "next/font/google";
-import "./globals.css";
 import { twMerge } from "tailwind-merge";
+import { Open_Sans } from "next/font/google";
+import type { Metadata } from "next";
+
+import "./globals.css";
 
 const openSans = Open_Sans({ subsets: ["latin"] });
 
@@ -18,13 +19,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={twMerge(openSans.className, "bg-slate-400")}>
-        <video
-          src="/assets/intro_min.mp4"
-          autoPlay
-          loop
-          muted
-          className="absolute w-auto min-w-full min-h-full max-h-none opacity-80 object-cover -z-10"
-        />
         {children}
       </body>
     </html>
