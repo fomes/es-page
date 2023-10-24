@@ -19,7 +19,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={twMerge(openSans.className, "bg-slate-400")}>
         <video
-          src="/assets/intro.mp4"
+          src="/assets/intro_min.mp4"
           autoPlay
           loop
           muted
