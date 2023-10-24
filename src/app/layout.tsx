@@ -17,13 +17,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={twMerge(openSans.className)}>
+      <body className={twMerge(openSans.className, "bg-slate-400")}>
         <video
           src="/assets/intro.mp4"
           autoPlay
           loop
           muted
-          className="absolute w-auto min-w-full min-h-full max-h-none opacity-80 object-cover"
+          className="absolute w-auto min-w-full min-h-full max-h-none opacity-80 object-cover -z-10"
         />
         {children}
       </body>

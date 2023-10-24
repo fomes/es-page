@@ -67,11 +67,13 @@ export function LoginForm() {
                   />
                 </div>
               </div>
-              <Button
-                text="login"
-                className="w-96 bg-white"
-                icon={<HiOutlineArrowRight className="text-2x" />}
-              />
+              <a href="/">
+                <Button
+                  text="login"
+                  className="w-96 bg-white"
+                  icon={<HiOutlineArrowRight className="text-2x" />}
+                />
+              </a>
             </div>
             <div className="w-[370px] text-center">
               <span className="text-white text-sm font-normal font-['Open Sans']">
