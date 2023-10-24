@@ -6,7 +6,7 @@ export function SideNavBar() {
   return (
     <div className="w-24 absolute left-0 top-0 border-r border-white border-opacity-30">
       <div className="h-screen flex items-center justify-center relative">
-        <div className="w-12 h-12 bg-white bg-opacity-10 rounded-full shadow-inner backdrop-blur-lg justify-center items-center inline-flex hover:scale-110 transition-all duration-300 cursor-pointer absolute -right-6">
+        <div className="w-12 h-12 bg-white bg-opacity-10 rounded-full shadow-inner backdrop-blur-lg justify-center items-center inline-flex hover:scale-110 hover:brightness-125 transition-all duration-300 cursor-pointer absolute -right-6">
           <SideNavImage imgName="plus" imgClass="hover:scale-100" />
         </div>
 
