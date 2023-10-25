@@ -5,9 +5,17 @@ import React, { ReactNode, useState } from "react";
 type InputProps = {
   iconShow?: ReactNode;
   iconHide?: ReactNode;
+  name: string;
+  value: string;
 } & React.HTMLAttributes<HTMLInputElement>;
 
-export function InputPassord({ iconShow, iconHide, ...props }: InputProps) {
+export function InputPassord({
+  iconShow,
+  iconHide,
+  name,
+  value,
+  ...props
+}: InputProps) {
   const [showPassword, setShowPassword] = useState<boolean>(false);
 
   const handleShowPassowrd = () => {
@@ -18,6 +26,9 @@ export function InputPassord({ iconShow, iconHide, ...props }: InputProps) {
     <div className="relative">
       <input
         {...props}
+        required
+        name={name}
+        value={value}
         type={!showPassword ? "password" : "text"}
         className="w-96 h-12 rounded-[500px] flex-col justify-start items-start gap-2 inline-flex p-4 bg-white bg-opacity-10 backdrop-blur-lg text-white text-sm font-normal placeholder:text-white shadow-white/60 shadow-sm"
       />

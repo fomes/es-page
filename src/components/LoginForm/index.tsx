@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import { Button } from "../Button";
 import { BsArrowRight } from "react-icons/bs";
@@ -5,8 +7,26 @@ import { LinkButton } from "../LinkButton";
 import { Input } from "../Input";
 import { LuEye, LuEyeOff } from "react-icons/lu";
 import { InputPassord } from "../InputPassword";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 export function LoginForm() {
+  const [user, setUser] = useState({
+    email: "",
+    pass: "",
+  });
+
+  const router = useRouter();
+
+  const handleLogin = (event: React.FormEvent<HTMLInputElement>) => {
+    setUser({ ...user, [event.currentTarget.name]: event.currentTarget.value });
+  };
+
+  const handleSubmit = (event: React.SyntheticEvent) => {
+    event.preventDefault();
+    router.push("/");
+  };
+
   return (
     <div className="w-[1033.61px] h-[748px] p-12 bg-black bg-opacity-60 rounded-2xl shadow-inner backdrop-blur-lg justify-start items-center gap-12 inline-flex m-xl:h-[680px]">
       <div className="rounded-lg justify-start items-start gap-2.5 flex">
@@ -50,15 +70,29 @@ export function LoginForm() {
           </div>
           <div className="w-[381px] h-[0px] border-[1px] border-white border-opacity-30"></div>
           <div className="flex-col justify-start items-start gap-6 flex">
-            <div className="flex-col justify-start items-start gap-12 flex">
+            <form
+              className="flex-col justify-start items-start gap-12 flex"
+              onSubmit={handleSubmit}
+            >
               <div className="flex-col justify-start items-start gap-8 flex">
                 <div className="h-[25px] border-b border-white border-opacity-30 justify-end items-center inline-flex">
                   <LinkButton text="I’M a broker" />
                 </div>
                 <div className="flex-col justify-start items-start gap-4 flex">
-                  <Input type="email" placeholder="Type your email" />
+                  <Input
+                    name="email"
+                    type="email"
+                    autoComplete="on"
+                    placeholder="Type your email"
+                    required
+                    value={user.email}
+                    onChange={handleLogin}
+                  />
                   <InputPassord
+                    name="pass"
                     placeholder="Type your passoword"
+                    value={user.pass}
+                    onChange={handleLogin}
                     iconShow={
                       <LuEyeOff className="text-white absolute right-3 bottom-4 cursor-pointer hover:text-black transition-all duration-300" />
                     }
@@ -68,14 +102,14 @@ export function LoginForm() {
                   />
                 </div>
               </div>
-              <a href="/">
-                <Button
-                  text="login"
-                  className="w-96 bg-white"
-                  icon={<BsArrowRight size={20} />}
-                />
-              </a>
-            </div>
+
+              <Button
+                type="submit"
+                text="login"
+                className="w-96 bg-white"
+                icon={<BsArrowRight size={20} />}
+              />
+            </form>
             <div className="w-[370px] text-center">
               <span className="text-white text-sm font-normal font-['Open Sans']">
                 {"Don’t have an account?"}

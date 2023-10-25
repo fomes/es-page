@@ -1,7 +1,7 @@
-import React, { ReactNode } from "react";
+import React, { ButtonHTMLAttributes, ReactNode } from "react";
 import { twMerge } from "tailwind-merge";
 
-type ButtonProps = {
+type ButtonProps = ButtonHTMLAttributes<"button"> & {
   text?: string;
   icon?: ReactNode;
 } & React.HTMLAttributes<HTMLButtonElement>;
