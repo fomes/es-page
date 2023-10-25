@@ -28,6 +28,7 @@ export function Header() {
           width={228}
           height={32}
           className="h-8"
+          sizes="100%"
         />
       </div>
     </div>

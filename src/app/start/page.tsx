@@ -1,3 +1,4 @@
+import { BuildingsSection } from "@/components/BuildingsSection";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { SideNavBar } from "@/components/SideNavBar";
@@ -10,6 +11,7 @@ export default function Start() {
       <SideNavBar />
       <Header />
       <StartMainSection />
+      <BuildingsSection />
       <Footer />
     </main>
   );

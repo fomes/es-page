@@ -17,6 +17,7 @@ export function LoginForm() {
             width={505}
             height={652}
             className="rounded-lg"
+            sizes="100%"
           />
 
           <Image
