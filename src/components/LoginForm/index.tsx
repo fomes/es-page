@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Button } from "../Button";
-import { HiOutlineArrowRight } from "react-icons/hi";
+import { BsArrowRight } from "react-icons/bs";
 import { LinkButton } from "../LinkButton";
 import { Input } from "../Input";
 import { LuEye, LuEyeOff } from "react-icons/lu";
@@ -71,7 +71,7 @@ export function LoginForm() {
                 <Button
                   text="login"
                   className="w-96 bg-white"
-                  icon={<HiOutlineArrowRight className="text-2x" />}
+                  icon={<BsArrowRight size={20} />}
                 />
               </a>
             </div>

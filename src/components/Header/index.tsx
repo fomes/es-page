@@ -6,7 +6,7 @@ export function Header() {
     <div className="min-w-[1216px] w-full h-12 justify-between items-center inline-flex">
       <div className="min-w-[867px] w-5/6 h-[30px] border-b-2 border-white border-opacity-30 justify-start items-start gap-[23px] flex">
         <div className="h-[30px] pb-[0.68px] flex-row justify-center items-start gap-3 inline-flex">
-          <HeaderItem text="Home" />
+          <HeaderItem text="Home" className="border-b-2" />
           <HeaderItem text="Project" />
           <HeaderItem text="Sales" />
         </div>

@@ -1,6 +1,7 @@
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { SideNavBar } from "@/components/SideNavBar";
+import { StartMainSection } from "@/components/StartMainSection";
 import React from "react";
 
 export default function Start() {
@@ -8,6 +9,7 @@ export default function Start() {
     <main className="py-8 px-28 bg-home h-screen">
       <SideNavBar />
       <Header />
+      <StartMainSection />
       <Footer />
     </main>
   );

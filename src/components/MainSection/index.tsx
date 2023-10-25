@@ -1,8 +1,7 @@
 "use client";
 
-import { HiOutlineArrowRight } from "react-icons/hi";
+import { BsArrowRight } from "react-icons/bs";
 import { motion } from "framer-motion";
-import { fadeIn } from "@/utils/variants";
 import { useRouter } from "next/navigation";
 
 export function MainSection() {
@@ -14,10 +13,9 @@ export function MainSection() {
 
   return (
     <motion.div
-      variants={fadeIn("left", 0.3)}
-      initial="hidden"
-      whileInView={"show"}
-      viewport={{ once: false, amount: 1 }}
+      initial={{ x: 1200, opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+      transition={{ duration: 1 }}
       className="w-[708px] h-[440px] top-[320px] absolute right-1/2 left-1/2 -ml-[354px]"
     >
       <div className="flex-col justify-start items-center flex">
@@ -39,7 +37,7 @@ export function MainSection() {
           onClick={handleChangeBg}
           className="w-14 h-14 p-4 bg-white bg-opacity-10 rounded-full shadow-inner backdrop-blur-lg justify-center items-center inline-flex cursor-pointer hover:brightness-125 hover:scale-125 transition-all duration-300"
         >
-          <HiOutlineArrowRight className="text-white text-2xl" />
+          <BsArrowRight className="text-white" size={20} />
         </div>
       </div>
     </motion.div>
